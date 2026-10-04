@@ -1,0 +1,62 @@
+/* ==========================================================================
+   Restauradores de la Memoria - Estilos Complementarios
+   ========================================================================== */
+
+:root {
+  --bg-museum: #FAF7F2;
+  --ink-museum: #2B2622;
+  --brand-earth: #561E1E;
+  --brand-earth-light: #7A2E2E;
+  --accent-gold: #D9A441;
+  --accent-gold-dark: #B88226;
+  --card-bg: #FFFFFF;
+  --border-line: #E6DDD0;
+  --paper-bg: #F2EBE0;
+  --dark-room: #1D1816;
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Accesibilidad */
+.sr-only:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Transiciones personalizadas para tarjetas */
+.card-hover {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos específicos para la sección Museo Virtual */
+.visor-3d-container {
+  background: var(--dark-room);
+  border: 2px dashed var(--accent-gold);
+}
+
+/* Ajustes de impresión para la Guía UX/UI */
+@media print {
+  header, footer, .btn {
+    display: none !important;
+  }
+  body {
+    background: #FFF !important;
+    color: #000 !important;
+  }
+}

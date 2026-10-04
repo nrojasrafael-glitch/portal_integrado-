@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Logo Restauradores de la Memoria">
+<circle cx="60" cy="60" r="56" fill="#561e1e"/>
+<path d="M30 88V46l30-20 30 20v42z" fill="#faf7f2"/>
+<path d="M60 36l22 15v33H38V51z" fill="#7a2e2e"/>
+<rect x="52" y="62" width="16" height="22" rx="8" fill="#d9a441"/>
+<circle cx="60" cy="52" r="5" fill="#d9a441"/>
+</svg>

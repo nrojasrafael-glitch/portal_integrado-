@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museo Virtual 3D | Restauradores de la Memoria</title>
+    <!-- Carga de A-Frame para renderizado 3D -->
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <style>
+        .ui-overlay {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 9999;
+        }
+        .btn-volver {
+            background-color: #D9A441;
+            color: #1D1816;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-family: sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s;
+        }
+        .btn-volver:hover {
+            background-color: #f1b748;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Botón flotante para regresar al portal principal -->
+    <div class="ui-overlay">
+        <a href="index.html" class="btn-volver">
+            ← Volver al portal principal
+        </a>
+    </div>
+
+    <!-- Escena 3D A-Frame -->
+    <a-scene embedded style="width: 100vw; height: 100vh;">
+        <!-- Luces -->
+        <a-ambient-light color="#ffffff" intensity="0.6"></a-ambient-light>
+        <a-directional-light position="-1 2 1" intensity="0.8"></a-directional-light>
+
+        <!-- Cielo y Piso del Museo -->
+        <a-sky color="#1D1816"></a-sky>
+        <a-plane rotation="-90 0 0" width="30" height="30" color="#3E2723" roughness="0.8"></a-plane>
+
+        <!-- EXPOSICIÓN 1: Objeto Digitalizado 3D -->
+        <a-group position="-3 0 -5">
+            <!-- Pedestal -->
+            <a-box position="0 0.75 0" width="1.2" height="1.5" depth="1.2" color="#561E1E"></a-box>
+            <!-- Objeto 3D (Sustituir 'gltf-model' por la ruta de tu archivo .glb exportado de Luma AI) -->
+            <a-box position="0 1.8 0" width="0.6" height="0.6" depth="0.6" color="#D9A441" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear"></a-box>
+            <!-- Cartela informativa -->
+            <a-text value="Objeto 1: Relicario Familiar\n(Sustituir por GLB de Luma AI)" position="-1.5 2.5 0" width="4" color="#FFFFFF"></a-text>
+        </a-group>
+
+        <!-- EXPOSICIÓN 2: Objeto Digitalizado 3D -->
+        <a-group position="3 0 -5">
+            <!-- Pedestal -->
+            <a-box position="0 0.75 0" width="1.2" height="1.5" depth="1.2" color="#561E1E"></a-box>
+            <!-- Objeto 3D (Sustituir 'gltf-model' por tu segundo modelo .glb) -->
+            <a-cylinder position="0 1.8 0" radius="0.3" height="0.8" color="#7A2E2E" animation="property: rotation; to: 0 360 0; loop: true; dur: 12000; easing: linear"></a-cylinder>
+            <!-- Cartela informativa -->
+            <a-text value="Objeto 2: Carta Histórica 3D\n(Sustituir por GLB de Luma AI)" position="-1.5 2.5 0" width="4" color="#FFFFFF"></a-text>
+        </a-group>
+
+        <!-- Cámara del visitante con controles de teclado (WASD) y ratón -->
+        <a-entity camera look-controls wasd-controls position="0 1.6 0">
+            <a-cursor color="#D9A441" max-distance="5"></a-cursor>
+        </a-entity>
+    </a-scene>
+
+</body>
+</html>

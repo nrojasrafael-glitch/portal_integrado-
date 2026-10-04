@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restauradores de la Memoria | Colegio Tom Adams IED</title>
+    <meta name="description" content="Portal del proyecto Restauradores de la Memoria y su Museo Escolar de la Memoria, Colegio Tom Adams IED, Bogotá.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts & Lucide Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        museum: {
+                            bg: '#FAF7F2',
+                            card: '#FFFFFF',
+                            border: '#E6DDD0',
+                            earth: '#561E1E',
+                            earthLight: '#7A2E2E',
+                            gold: '#D9A441',
+                            goldDark: '#B88226',
+                            charcoal: '#2B2622',
+                            muted: '#6B625A',
+                            paper: '#F2EBE0',
+                            darkRoom: '#1D1816'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Lora', 'serif'],
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FAF7F2;
+            color: #2B2622;
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3, h4, .font-serif-custom {
+            font-family: 'Lora', serif;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F2EBE0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #561E1E;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D9A441;
+        }
+        .paper-texture {
+            background-image: radial-gradient(#E6DDD0 0.75px, transparent 0.75px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="paper-texture antialiased selection:bg-museum-gold selection:text-museum-earth">
+
+    <a class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-museum-gold focus:text-museum-earth focus:px-4 focus:py-2 focus:rounded-lg font-bold" href="#inicio">Saltar al contenido</a>
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-40 bg-museum-earth text-white border-b border-museum-earthLight shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#inicio" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-museum-gold flex items-center justify-center text-museum-earth group-hover:scale-105 transition-transform shadow">
+                    <i data-lucide="landmark" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <span class="font-serif-custom font-bold text-lg text-white block leading-tight">Restauradores <span class="text-museum-gold">de la Memoria</span></span>
+                    <span class="text-xs text-museum-paper tracking-wider uppercase block opacity-80">Colegio Tom Adams IED</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav id="nav-desktop" class="hidden xl:flex items-center gap-1 text-xs font-medium">
+                <a href="#inicio" class="px-2.5 py-1.5 rounded-lg hover:bg-white/10 transition-colors">Inicio</a>
+                <a href="#proyecto" class="px-2.5 py-1.5 rounded-lg hover:bg-white/10 transition-colors">El Proyecto</a>
+                <a href="#museo" class="px-2.5 py-1.5 rounded-lg hover:bg-white/10 transition-colors">Museo</a>
+                <a href="#salidas" class="px-2.5 py-1.5 rounded-lg hover:bg-white/10 transition-colors">Salidas</a>
+                <a href="#fechas" class="px-2.5 py-1.5 rounded-lg hover:bg-white/10 transition-colors">Fechas</a>
+                <a href="#visitas" class="px-2.5 py-1.5 rounded-lg hover:bg-white/10 transition-colors">Visitas</a>
+                <a href="#reconocimientos" class="px-2.5 py-1.5 rounded-lg hover:bg-white/10 transition-colors">Reconocimientos</a>
+                <a href="#alianzas" class="px-2.5 py-1.5 rounded-lg hover:bg-white/10 transition-colors">Alianzas</a>
+                <a href="#galeria" class="px-2.5 py-1.5 rounded-lg hover:bg-white/10 transition-colors">Galería</a>
+                <a href="#contacto" class="px-2.5 py-1.5 bg-museum-gold text-museum-earth font-bold rounded-lg hover:bg-yellow-400 transition-colors ml-2">Contacto</a>
+            </nav>
+
+            <button id="menu-btn" class="xl:hidden p-2 rounded-lg text-white hover:bg-museum-earthLight focus:outline-none" aria-label="Abrir menú" aria-expanded="false">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav -->
+        <div id="mobile-menu" class="hidden xl:hidden border-t border-museum-earthLight bg-museum-earth px-4 pt-2 pb-6 space-y-2 text-sm font-medium">
+            <a href="#inicio" class="mobile-link block px-3 py-2 rounded-md hover:bg-museum-earthLight">Inicio</a>
+            <a href="#proyecto" class="mobile-link block px-3 py-2 rounded-md hover:bg-museum-earthLight">El Proyecto</a>
+            <a href="#museo" class="mobile-link block px-3 py-2 rounded-md hover:bg-museum-earthLight">Museo Escolar</a>
+            <a href="#salidas" class="mobile-link block px-3 py-2 rounded-md hover:bg-museum-earthLight">Salidas Pedagógicas</a>
+            <a href="#fechas" class="mobile-link block px-3 py-2 rounded-md hover:bg-museum-earthLight">Fechas Conmemorativas</a>
+            <a href="#visitas" class="mobile-link block px-3 py-2 rounded-md hover:bg-museum-earthLight">Visitas y Eventos</a>
+            <a href="#reconocimientos" class="mobile-link block px-3 py-2 rounded-md hover:bg-museum-earthLight">Reconocimientos</a>
+            <a href="#alianzas" class="mobile-link block px-3 py-2 rounded-md hover:bg-museum-earthLight">Alianzas</a>
+            <a href="#galeria" class="mobile-link block px-3 py-2 rounded-md hover:bg-museum-earthLight">Galería</a>
+            <a href="#contacto" class="mobile-link block px-3 py-2 rounded-md bg-museum-gold text-museum-earth font-bold">Contacto</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="relative bg-gradient-to-br from-museum-earth via-museum-earthLight to-amber-900 text-white py-20 lg:py-28 overflow-hidden border-b border-museum-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-xs font-semibold uppercase tracking-widest mb-6 text-museum-gold">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                    <span>Proyecto Pedagogico e Institucional</span>
+                </div>
+                
+                <h1 class="font-serif-custom text-4xl sm:text-6xl font-bold leading-tight mb-6">
+                    Restauradores de la Memoria
+                </h1>
+                
+                <p class="text-lg sm:text-xl font-light text-museum-paper max-w-3xl mx-auto mb-8 leading-relaxed">
+                    Una escuela que recuerda, narra y resignifica. Conoce el proyecto del <strong>Colegio Tom Adams IED</strong> y recorre nuestro Museo Escolar de la Memoria.
+                </p>
+                
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#museo" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-museum-gold text-museum-earth font-bold hover:bg-yellow-400 transition-all shadow-lg hover:scale-105">
+                        <i data-lucide="box" class="w-5 h-5"></i>
+                        <span>Visitar el Museo Virtual 3D</span>
+                    </a>
+                    <a href="#proyecto" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border-2 border-white text-white font-semibold hover:bg-white hover:text-museum-earth transition-all">
+                        <i data-lucide="book-open" class="w-5 h-5"></i>
+                        <span>Conocer el Proyecto</span>
+                    </a>
+                </div>
+            </div>
+            <div class="absolute -bottom-10 -right-10 w-80 h-80 bg-museum-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+        </section>
+
+        <!-- El Proyecto -->
+        <section id="proyecto" class="py-16 lg:py-24 border-b border-museum-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mb-12">
+                    <span class="text-xs font-semibold text-museum-goldDark uppercase tracking-widest block mb-2">Fundamentación</span>
+                    <h2 class="font-serif-custom text-3xl sm:text-4xl font-bold text-museum-earth mb-4">
+                        ¿Qué es Restauradores de la Memoria?
+                    </h2>
+                    <p class="text-lg text-museum-muted leading-relaxed">
+                        Proyecto institucional del Colegio Tom Adams IED que construye memoria histórica desde la escuela, con estudiantes como protagonistas.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-museum-card p-6 rounded-2xl border border-museum-border shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-xl bg-museum-earth/10 text-museum-earth flex items-center justify-center mb-4">
+                            <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif-custom text-xl font-bold text-museum-earth mb-2">Memoria y paz</h3>
+                        <p class="text-sm text-museum-muted leading-relaxed">
+                            Trabajo pedagógico sobre memoria del conflicto y construcción de paz en la comunidad educativa.
+                        </p>
+                    </div>
+
+                    <div class="bg-museum-card p-6 rounded-2xl border border-museum-border shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-xl bg-museum-earth/10 text-museum-earth flex items-center justify-center mb-4">
+                            <i data-lucide="archive" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif-custom text-xl font-bold text-museum-earth mb-2">Museo Escolar</h3>
+                        <p class="text-sm text-museum-muted leading-relaxed">
+                            Muestras comunitarias con relatos, objetos, cómics e historias recogidas por los estudiantes.
+                        </p>
+                    </div>
+
+                    <div class="bg-museum-card p-6 rounded-2xl border border-museum-border shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-xl bg-museum-earth/10 text-museum-earth flex items-center justify-center mb-4">
+                            <i data-lucide="laptop" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif-custom text-xl font-bold text-museum-earth mb-2">Tecnología</h3>
+                        <p class="text-sm text-museum-muted leading-relaxed">
+                            Museo Virtual de la Memoria que lleva la experiencia a cualquier visitante en línea en entornos 3D.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Museo Escolar y Recorrido 3D -->
+        <section id="museo" class="py-16 lg:py-24 bg-museum-darkRoom text-white border-b border-museum-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-xs font-semibold text-museum-gold uppercase tracking-widest block mb-2">Entorno Interactivo</span>
+                    <h2 class="font-serif-custom text-3xl sm:text-4xl font-bold text-museum-gold mb-4">
+                        Museo Escolar de la Memoria
+                    </h2>
+                    <p class="text-museum-paper text-base leading-relaxed">
+                        Muestras comunitarias, historietas de cómic (dibujo a mano y digitalización) y un recorrido virtual en 3D desarrollado con WebGL y A-Frame.
+                    </p>
+                </div>
+
+                <!-- Contenedor del visor 3D -->
+                <div class="bg-museum-charcoal border-2 border-dashed border-museum-gold rounded-2xl p-6 sm:p-10 text-center shadow-2xl relative overflow-hidden mb-6">
+                    <div class="max-w-xl mx-auto">
+                        <div class="w-16 h-16 rounded-full bg-museum-gold/20 text-museum-gold mx-auto flex items-center justify-center mb-4">
+                            <i data-lucide="box" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-serif-custom text-2xl font-bold text-white mb-2">Museo Virtual 3D (A-Frame)</h3>
+                        <p class="text-sm text-gray-300 mb-6">
+                            Explora los objetos digitalizados en 3D mediante fotogrametría y herramientas Luma AI desarrollados por los estudiantes.
+                        </p>
+                        <a href="museo.html" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-museum-gold text-museum-earth font-bold hover:bg-yellow-400 transition-all shadow-lg">
+                            <i data-lucide="eye" class="w-5 h-5"></i>
+                            <span>Entrar al museo virtual en pantalla completa</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-center text-sm text-museum-paper/80">
+                    Versión anterior: 
+                    <a href="https://edu.cospaces.io/SRH-SUX" target="_blank" rel="noopener" class="text-museum-gold underline hover:text-yellow-300 font-semibold inline-flex items-center gap-1">
+                        Museo en CoSpaces Edu <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Salidas Pedagógicas -->
+        <section id="salidas" class="py-16 lg:py-24 border-b border-museum-border bg-museum-paper">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <span class="text-xs font-semibold text-museum-goldDark uppercase tracking-widest block mb-2">Experiencias de Campo</span>
+                <h2 class="font-serif-custom text-3xl sm:text-4xl font-bold text-museum-earth mb-4">
+                    Salidas Pedagógicas
+                </h2>
+                <p class="text-museum-muted max-w-2xl mb-8">
+                    Visitas a lugares sagrados e institucionales de memoria que alimentan el trabajo pedagógico e investigativo en el aula.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <article class="bg-museum-card rounded-2xl p-6 border border-museum-border shadow-sm flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full bg-museum-gold text-museum-earth text-xs font-bold mb-4">Junio 2025</span>
+                            <h3 class="font-serif-custom text-xl font-bold text-museum-earth mb-2">Eje de Memoria y Paz</h3>
+                            <p class="text-sm text-museum-muted mb-4">
+                                Salida pedagógica en alianza con el Centro Nacional de Memoria Histórica (CNMH).
+                            </p>
+                        </div>
+                        <a href="https://web.facebook.com/reel/1748586202702527" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs font-bold text-museum-earthLight hover:text-museum-goldDark">
+                            <span>Ver registro audiovisual</span>
+                            <i data-lucide="video" class="w-4 h-4"></i>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fechas Conmemorativas -->
+        <section id="fechas" class="py-16 lg:py-24 border-b border-museum-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <span class="text-xs font-semibold text-museum-goldDark uppercase tracking-widest block mb-2">Línea del Tiempo</span>
+                <h2 class="font-serif-custom text-3xl sm:text-4xl font-bold text-museum-earth mb-4">
+                    Fechas Conmemorativas e Hitos
+                </h2>
+                <p class="text-museum-muted max-w-2xl mb-12">
+                    Evolución histórica y momentos clave en el desarrollo del proyecto.
+                </p>
+
+                <div class="relative border-l-2 border-museum-earth pl-6 sm:pl-8 space-y-8 max-w-3xl">
+                    <div class="relative group">
+                        <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-museum-gold border-2 border-museum-earth"></div>
+                        <span class="text-xs font-bold px-2 py-0.5 rounded bg-museum-paper text-museum-earth border border-museum-border">2018</span>
+                        <h3 class="font-serif-custom font-bold text-lg text-museum-earth mt-1">Feria Internacional del Libro de Bogotá</h3>
+                        <p class="text-sm text-museum-muted">Exposición colectiva «Escuelas que recuerdan, narran y resignifican la guerra», semilla inicial del proyecto.</p>
+                    </div>
+
+                    <div class="relative group">
+                        <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-museum-gold border-2 border-museum-earth"></div>
+                        <span class="text-xs font-bold px-2 py-0.5 rounded bg-museum-paper text-museum-earth border border-museum-border">2021 y 2023</span>
+                        <h3 class="font-serif-custom font-bold text-lg text-museum-earth mt-1">Primeras Versiones del Museo Escolar</h3>
+                        <p class="text-sm text-museum-muted">Muestras físicas y sistematización de relatos en video dentro de la institución.</p>
+                    </div>
+
+                    <div class="relative group">
+                        <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-museum-gold border-2 border-museum-earth"></div>
+                        <span class="text-xs font-bold px-2 py-0.5 rounded bg-museum-paper text-museum-earth border border-museum-border">2024</span>
+                        <h3 class="font-serif-custom font-bold text-lg text-museum-earth mt-1">Entrevista en City TV</h3>
+                        <p class="text-sm text-museum-muted">Cubrimiento del proyecto en el programa «Arriba Bogotá» para televisión abierta.</p>
+                    </div>
+
+                    <div class="relative group">
+                        <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-museum-gold border-2 border-museum-earth"></div>
+                        <span class="text-xs font-bold px-2 py-0.5 rounded bg-museum-paper text-museum-earth border border-museum-border">Febrero 2025</span>
+                        <h3 class="font-serif-custom font-bold text-lg text-museum-earth mt-1">Entornos Escolares Inspiradores</h3>
+                        <p class="text-sm text-museum-muted">Reconocimiento otorgado por la Secretaría de Educación y la Alcaldía Mayor de Bogotá.</p>
+                    </div>
+
+                    <div class="relative group">
+                        <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-museum-gold border-2 border-museum-earth"></div>
+                        <span class="text-xs font-bold px-2 py-0.5 rounded bg-museum-paper text-museum-earth border border-museum-border">Octubre 2025</span>
+                        <h3 class="font-serif-custom font-bold text-lg text-museum-earth mt-1">Exposición «La Escuela Territorio de Paz»</h3>
+                        <p class="text-sm text-museum-muted">Exposición oficial en las instalaciones del Centro de Memoria, Paz y Reconciliación.</p>
+                    </div>
+
+                    <div class="relative group">
+                        <div class="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-museum-gold border-2 border-museum-earth"></div>
+                        <span class="text-xs font-bold px-2 py-0.5 rounded bg-museum-paper text-museum-earth border border-museum-border">Noviembre 2025</span>
+                        <h3 class="font-serif-custom font-bold text-lg text-museum-earth mt-1">5.ª Versión del Museo & INFOMATRIX Sudamérica</h3>
+                        <p class="text-sm text-museum-muted">Acompañamiento del CNMH y participación en el XX Concurso Iberoamericano de Ciencia y Tecnología.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visitas y Eventos -->
+        <section id="visitas" class="py-16 lg:py-24 border-b border-museum-border bg-museum-paper">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <span class="text-xs font-semibold text-museum-goldDark uppercase tracking-widest block mb-2">Difusión</span>
+                <h2 class="font-serif-custom text-3xl sm:text-4xl font-bold text-museum-earth mb-4">
+                    Visitas y Eventos
+                </h2>
+                <p class="text-museum-muted max-w-2xl mb-8">
+                    Exposiciones fuera del colegio y participación en medios de comunicación.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <article class="bg-museum-card rounded-2xl p-6 border border-museum-border shadow-sm flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full bg-museum-gold text-museum-earth text-xs font-bold mb-3">Octubre 2025</span>
+                            <h3 class="font-serif-custom text-xl font-bold text-museum-earth mb-2">La Escuela Territorio de Paz</h3>
+                            <p class="text-sm text-museum-muted mb-4">Exposición temporal abierta al público en el Centro de Memoria, Paz y Reconciliación del Distrito.</p>
+                        </div>
+                        <a href="https://www.instagram.com/p/DQMuGmsjtRB/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs font-bold text-museum-earth hover:text-museum-goldDark">
+                            <span>Ver publicación en Instagram</span>
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </article>
+
+                    <article class="bg-museum-card rounded-2xl p-6 border border-museum-border shadow-sm flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full bg-museum-gold text-museum-earth text-xs font-bold mb-3">2025–2026</span>
+                            <h3 class="font-serif-custom text-xl font-bold text-museum-earth mb-2">El Guateque – Javeriana Estéreo</h3>
+                            <p class="text-sm text-museum-muted mb-4">Participación y entrevistas en el programa Memorias Rurales a través de la emisora 91.9 FM.</p>
+                        </div>
+                        <a href="https://javerianaestereo.com/el-guateque/2025" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs font-bold text-museum-earth hover:text-museum-goldDark">
+                            <span>Escuchar emisión radial</span>
+                            <i data-lucide="radio" class="w-4 h-4"></i>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reconocimientos -->
+        <section id="reconocimientos" class="py-16 lg:py-24 border-b border-museum-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <span class="text-xs font-semibold text-museum-goldDark uppercase tracking-widest block mb-2">Logros</span>
+                <h2 class="font-serif-custom text-3xl sm:text-4xl font-bold text-museum-earth mb-4">
+                    Reconocimientos
+                </h2>
+                <p class="text-museum-muted max-w-2xl mb-8">
+                    El trabajo de investigación y creación de los estudiantes ha sido visibilizado a nivel distrital e iberoamericano.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-museum-card p-6 rounded-2xl border border-museum-border flex items-start gap-4">
+                        <div class="p-3 bg-museum-gold/20 text-museum-goldDark rounded-xl">
+                            <i data-lucide="award" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-museum-goldDark">Feb 2025</span>
+                            <h3 class="font-serif-custom text-lg font-bold text-museum-earth">Entornos Escolares Inspiradores</h3>
+                            <p class="text-xs text-museum-muted mb-3">Premio y reconocimiento otorgado por la Alcaldía Mayor de Bogotá.</p>
+                            <a href="https://x.com/Bogota/status/1894407697602080927" target="_blank" rel="noopener" class="text-xs font-bold text-museum-earth underline">Ver anuncio oficial</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-museum-card p-6 rounded-2xl border border-museum-border flex items-start gap-4">
+                        <div class="p-3 bg-museum-gold/20 text-museum-goldDark rounded-xl">
+                            <i data-lucide="trophy" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-museum-goldDark">Nov 2025</span>
+                            <h3 class="font-serif-custom text-lg font-bold text-museum-earth">INFOMATRIX Sudamérica</h3>
+                            <p class="text-xs text-museum-muted mb-3">XX Concurso Iberoamericano de Ciencia y Tecnología. Categoría Diseño de Software: Museo Virtual de la Memoria.</p>
+                            <a href="https://infomatrix.lat/colombia/" target="_blank" rel="noopener" class="text-xs font-bold text-museum-earth underline">Ver evento</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alianzas Institucionales -->
+        <section id="alianzas" class="py-16 lg:py-24 border-b border-museum-border bg-museum-paper">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <span class="text-xs font-semibold text-museum-goldDark uppercase tracking-widest block mb-2">Tejido Red</span>
+                <h2 class="font-serif-custom text-3xl sm:text-4xl font-bold text-museum-earth mb-8">
+                    Alianzas Institucionales
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-museum-card p-6 rounded-2xl border border-museum-border">
+                        <i data-lucide="building-2" class="w-8 h-8 text-museum-goldDark mb-3"></i>
+                        <h3 class="font-serif-custom font-bold text-lg text-museum-earth mb-2">Centro Nacional de Memoria Histórica</h3>
+                        <p class="text-xs text-museum-muted leading-relaxed">Acompañamiento pedagógico a la quinta versión del Museo Escolar (2025).</p>
+                    </div>
+
+                    <div class="bg-museum-card p-6 rounded-2xl border border-museum-border">
+                        <i data-lucide="landmark" class="w-8 h-8 text-museum-goldDark mb-3"></i>
+                        <h3 class="font-serif-custom font-bold text-lg text-museum-earth mb-2">Centro de Memoria, Paz y Reconciliación</h3>
+                        <p class="text-xs text-museum-muted leading-relaxed">Sede de la exposición distrital «La Escuela Territorio de Paz».</p>
+                    </div>
+
+                    <div class="bg-museum-card p-6 rounded-2xl border border-museum-border">
+                        <i data-lucide="radio" class="w-8 h-8 text-museum-goldDark mb-3"></i>
+                        <h3 class="font-serif-custom font-bold text-lg text-museum-earth mb-2">Javeriana Estéreo 91.9 FM</h3>
+                        <p class="text-xs text-museum-muted leading-relaxed">Espacio radial de divulgación cultural en el programa El Guateque.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería Multimedia -->
+        <section id="galeria" class="py-16 lg:py-24 border-b border-museum-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <span class="text-xs font-semibold text-museum-goldDark uppercase tracking-widest block mb-2">Archivo Audiovisual</span>
+                <h2 class="font-serif-custom text-3xl sm:text-4xl font-bold text-museum-earth mb-4">
+                    Galería Multimedia
+                </h2>
+                <p class="text-museum-muted mb-6">Videos y registros documentales del proyecto.</p>
+
+                <!-- Filtros JS -->
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <button class="btn-filtro active px-5 py-2 rounded-full border border-museum-earth bg-museum-earth text-white font-medium text-xs transition-colors" data-categoria="todos">Todos</button>
+                    <button class="btn-filtro px-5 py-2 rounded-full border border-museum-earth text-museum-earth hover:bg-museum-earth hover:text-white font-medium text-xs transition-colors" data-categoria="museo">Museo Escolar</button>
+                    <button class="btn-filtro px-5 py-2 rounded-full border border-museum-earth text-museum-earth hover:bg-museum-earth hover:text-white font-medium text-xs transition-colors" data-categoria="eventos">Eventos</button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <a class="galeria-item group bg-museum-card border border-museum-border p-5 rounded-2xl hover:border-museum-gold transition-all shadow-sm" data-categoria="museo" href="https://www.youtube.com/watch?v=EvR31L2aH44" target="_blank" rel="noopener">
+                        <div class="flex items-center gap-2 text-museum-goldDark text-xs font-bold mb-2">
+                            <i data-lucide="youtube" class="w-4 h-4"></i> Video
+                        </div>
+                        <strong class="font-serif-custom text-base text-museum-earth block group-hover:text-museum-goldDark">Museo Escolar 2021</strong>
+                        <small class="text-xs text-museum-muted mt-1 block">Video resumen de la edición</small>
+                    </a>
+
+                    <a class="galeria-item group bg-museum-card border border-museum-border p-5 rounded-2xl hover:border-museum-gold transition-all shadow-sm" data-categoria="museo" href="https://www.youtube.com/watch?v=7KZMLHnJLM8" target="_blank" rel="noopener">
+                        <div class="flex items-center gap-2 text-museum-goldDark text-xs font-bold mb-2">
+                            <i data-lucide="youtube" class="w-4 h-4"></i> Video
+                        </div>
+                        <strong class="font-serif-custom text-base text-museum-earth block group-hover:text-museum-goldDark">Museo Escolar 2023</strong>
+                        <small class="text-xs text-museum-muted mt-1 block">Video resumen de la edición</small>
+                    </a>
+
+                    <a class="galeria-item group bg-museum-card border border-museum-border p-5 rounded-2xl hover:border-museum-gold transition-all shadow-sm" data-categoria="museo" href="https://www.youtube.com/watch?v=-O6inKLKRRI" target="_blank" rel="noopener">
+                        <div class="flex items-center gap-2 text-museum-goldDark text-xs font-bold mb-2">
+                            <i data-lucide="youtube" class="w-4 h-4"></i> Video
+                        </div>
+                        <strong class="font-serif-custom text-base text-museum-earth block group-hover:text-museum-goldDark">Museo Escolar 2025</strong>
+                        <small class="text-xs text-museum-muted mt-1 block">Video resumen de la edición</small>
+                    </a>
+
+                    <a class="galeria-item group bg-museum-card border border-museum-border p-5 rounded-2xl hover:border-museum-gold transition-all shadow-sm" data-categoria="eventos" href="https://www.youtube.com/watch?v=Igaz95346rM" target="_blank" rel="noopener">
+                        <div class="flex items-center gap-2 text-museum-goldDark text-xs font-bold mb-2">
+                            <i data-lucide="youtube" class="w-4 h-4"></i> Video
+                        </div>
+                        <strong class="font-serif-custom text-base text-museum-earth block group-hover:text-museum-goldDark">Encuentro Distrital 2023</strong>
+                        <small class="text-xs text-museum-muted mt-1 block">Red de Escuelas como territorios de Paz</small>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto" class="py-16 lg:py-24 bg-museum-paper">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-2xl mx-auto">
+                    <div class="text-center mb-8">
+                        <span class="text-xs font-semibold text-museum-goldDark uppercase tracking-widest block mb-2">Participación</span>
+                        <h2 class="font-serif-custom text-3xl sm:text-4xl font-bold text-museum-earth mb-2">
+                            Contacto y Aportes
+                        </h2>
+                        <p class="text-museum-muted text-sm">
+                            Escríbenos, agenda tu visita o envía un aporte/testimonio al Museo Escolar.
+                        </p>
+                    </div>
+
+                    <form id="form-contacto" class="bg-museum-card p-8 rounded-2xl border border-museum-border shadow-md space-y-4" novalidate>
+                        <div>
+                            <label for="nombre" class="block text-xs font-bold text-museum-earth uppercase tracking-wider mb-1">Nombre completo</label>
+                            <input type="text" id="nombre" autocomplete="name" class="w-full px-4 py-2.5 rounded-lg border border-museum-border focus:ring-2 focus:ring-museum-gold focus:outline-none text-sm">
+                            <span class="text-red-600 text-xs mt-1 block font-medium" id="error-nombre"></span>
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-xs font-bold text-museum-earth uppercase tracking-wider mb-1">Correo electrónico</label>
+                            <input type="email" id="email" autocomplete="email" class="w-full px-4 py-2.5 rounded-lg border border-museum-border focus:ring-2 focus:ring-museum-gold focus:outline-none text-sm">
+                            <span class="text-red-600 text-xs mt-1 block font-medium" id="error-email"></span>
+                        </div>
+
+                        <div>
+                            <label for="tipo-aporte" class="block text-xs font-bold text-museum-earth uppercase tracking-wider mb-1">Tipo de participación / aporte</label>
+                            <select id="tipo-aporte" class="w-full px-4 py-2.5 rounded-lg border border-museum-border focus:ring-2 focus:ring-museum-gold focus:outline-none text-sm bg-white">
+                                <option value="">Seleccione una opción</option>
+                                <option value="objeto">Objeto para el Museo</option>
+                                <option value="fotografia">Fotografía histórica</option>
+                                <option value="testimonio">Testimonio o relato</option>
+                            </select>
+                            <span class="text-red-600 text-xs mt-1 block font-medium" id="error-tipo-aporte"></span>
+                        </div>
+
+                        <div>
+                            <label for="mensaje" class="block text-xs font-bold text-museum-earth uppercase tracking-wider mb-1">Descripción o mensaje</label>
+                            <textarea id="mensaje" rows="4" class="w-full px-4 py-2.5 rounded-lg border border-museum-border focus:ring-2 focus:ring-museum-gold focus:outline-none text-sm"></textarea>
+                            <span class="text-red-600 text-xs mt-1 block font-medium" id="error-mensaje"></span>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-museum-earth text-white font-bold hover:bg-museum-earthLight transition-all shadow-md">
+                            Enviar registro
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-museum-earth text-museum-paper py-8 border-t border-museum-earthLight text-center text-xs space-y-2">
+        <p>© 2026 Restauradores de la Memoria · Colegio Tom Adams IED · Bogotá, Colombia</p>
+        <p class="text-museum-gold opacity-90">Proyecto integrador de Programación Web</p>
+    </footer>
+
+    <!-- Scripts Integrados -->
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+
+        // Toggle menú móvil con soporte Lucide
+        const btnMenu = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (btnMenu && mobileMenu) {
+            btnMenu.addEventListener('click', () => {
+                const isOpen = mobileMenu.classList.toggle('hidden');
+                btnMenu.setAttribute('aria-expanded', !isOpen);
+            });
+
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    btnMenu.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
